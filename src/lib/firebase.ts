@@ -4,13 +4,13 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDhDH5z4aIHtgQpuc7_i3BAqfd-eqyRMg4",
-    authDomain: "appointment-scheduler-58a23.firebaseapp.com",
-    projectId: "appointment-scheduler-58a23",
-    storageBucket: "appointment-scheduler-58a23.appspot.com",
-    messagingSenderId: "670781803574",
-    appId: "1:670781803574:web:ee4d6779a9410d77b5dc97",
-    measurementId: "G-07HH9528RE"
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    projectId: process.env.PROJECT_ID,
+    storageBucket: process.env.STORAGE_BUCKET,
+    messagingSenderId: process.env.MESSAGING_SENDER_ID,
+    appId: process.env.APP_ID,
+    measurementId: process.env.MEASUREMENT_ID
 };
 
 export const app = initializeApp(firebaseConfig);
