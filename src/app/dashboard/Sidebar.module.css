@@ -1,0 +1,110 @@
+.sidebar {
+  width: 280px;
+  height: 100vh;
+  background: #4834d4;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.title {
+  color: white !important;
+  font-weight: 600 !important;
+  margin-bottom: 8px !important;
+}
+
+.username {
+  color: #a8a4e6 !important;
+  font-size: 0.9rem !important;
+}
+
+.searchInput {
+  margin-bottom: 20px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+}
+
+.searchInput input {
+  color: white !important;
+}
+
+.searchInput :global(.MuiOutlinedInput-root) {
+  border-radius: 8px;
+}
+
+.searchInput :global(.MuiOutlinedInput-notchedOutline) {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.searchInput :global(.MuiSvgIcon-root) {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.userList {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.listItem {
+  border-radius: 8px;
+  margin-bottom: 4px;
+}
+
+.listItem:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.listItem :global(.MuiListItemText-primary) {
+  color: white;
+}
+
+.listItem :global(.MuiListItemText-secondary) {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sidebar {
+  width: 280px;
+  height: 100vh;
+  background: #4834d4;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    min-width: 250px;
+    height: 100%;
+  }
+}
+
+.userList {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.logoutButton {
+  margin-top: auto !important;
+  padding: 15px !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.logoutButton:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}

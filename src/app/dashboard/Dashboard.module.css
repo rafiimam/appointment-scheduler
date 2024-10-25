@@ -1,0 +1,143 @@
+.mainContent {
+  background-color: #f8f7ff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.appointmentCard {
+  background: white;
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid rgba(103, 58, 183, 0.1);
+  height: 100%;
+}
+
+.appointmentCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(103, 58, 183, 0.15);
+}
+
+.cardTitle {
+  color: #5d2bdd;
+  font-weight: 600;
+}
+
+.cardDescription {
+  color: #000000;
+  margin: 8px 0;
+}
+
+.cardMeta {
+  color: #000000;
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+.statusPending {
+  color: #F6AD55;
+  font-weight: 500;
+}
+
+.statusApproved {
+  color: #48BB78;
+  font-weight: 500;
+}
+
+.statusDeclined {
+  color: #F56565;
+  font-weight: 500;
+}
+
+.actionButton {
+  text-transform: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  transition: all 0.2s;
+}
+
+.acceptButton {
+  background-color: #5534A5 !important;
+  color: white !important;
+}
+
+.acceptButton:hover {
+  background-color: #4C2B9B !important;
+}
+
+.declineButton {
+  background-color: #DC3545 !important;
+  color: white !important;
+}
+
+.scheduleCard {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(103, 58, 183, 0.1);
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.scheduleButton {
+  background-color: #5534A5 !important;
+  color: white !important;
+  padding: 12px 24px !important;
+  border-radius: 8px !important;
+  text-transform: none !important;
+  font-size: 1rem !important;
+  transition: all 0.2s !important;
+}
+
+.scheduleButton:hover {
+  background-color: #4C2B9B !important;
+  box-shadow: 0 4px 12px rgba(103, 58, 183, 0.2);
+}
+
+.inputField {
+  margin-top: 16px !important;
+}
+
+.inputField .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #5534A5;
+}
+
+.inputField .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #5534A5;
+}
+
+.expiredCard {
+  opacity: 0.7;
+  background-color: #f5f5f5;
+}
+
+.expiredCard:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+@media (max-width: 900px) {
+  .mainContent {
+    padding: 16px;
+    margin-top: 48px;
+  }
+
+  .scheduleCard {
+    margin: 16px 0;
+    padding: 16px;
+  }
+
+  .appointmentCard {
+    margin-bottom: 16px;
+  }
+
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+
+  .cardDescription {
+    font-size: 0.9rem;
+  }
+
+  .cardMeta {
+    font-size: 0.8rem;
+  }
+}
