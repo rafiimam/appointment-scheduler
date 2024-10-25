@@ -26,12 +26,12 @@ export const loginUser = async (username: string, password: string) => {
       username: data.username
     };
     
-    console.log('Login Response:', completeUserData);
+    //console.log('Login Response:', completeUserData);
     localStorage.setItem('currentUser', JSON.stringify(completeUserData));
     
     return completeUserData;
   } catch (error) {
-    console.error('Error logging in:', error);
+    //console.error('Error logging in:', error);
     throw error;
   }
 };
@@ -44,7 +44,7 @@ export const getCurrentUser = (): UserData | null => {
     const userData = JSON.parse(userStr) as UserData;
     return userData;
   } catch (error) {
-    console.error('Error parsing user data:', error);
+    //console.error('Error parsing user data:', error);
     return null;
   }
 };
@@ -65,7 +65,7 @@ export const registerUser = async (username: string, email: string, password: st
 
     return data;
   } catch (error) {
-    console.error('Error registering:', error);
+    //console.error('Error registering:', error);
     throw error;
   }
 };

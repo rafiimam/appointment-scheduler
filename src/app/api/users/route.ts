@@ -8,7 +8,7 @@ export async function GET() {
     
     const users = await usersCollection.find({}).toArray();
     
-    console.log('API - Fetched Users:', users);
+    //console.log('API - Fetched Users:', users);
     
     const transformedUsers = users.map(user => ({
       id: user._id.toString(),
@@ -18,7 +18,7 @@ export async function GET() {
 
     return NextResponse.json(transformedUsers);
   } catch (error) {
-    console.error('Error fetching users:', error);
+    //console.error('Error fetching users:', error);
     return NextResponse.json(
       { error: 'Failed to fetch users' },
       { status: 500 }

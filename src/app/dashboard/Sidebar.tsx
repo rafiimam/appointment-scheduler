@@ -41,7 +41,7 @@ export default function Sidebar({ currentUser, onUserSelect, onClose }: SidebarP
         setUsers(otherUsers);
         setFilteredUsers(otherUsers);
       } catch (error) {
-        console.error('Error fetching users:', error);
+        //console.error('Error fetching users:', error);
       }
     };
     fetchUsers();

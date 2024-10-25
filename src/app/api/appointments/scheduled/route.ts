@@ -16,7 +16,7 @@ export async function GET(request: Request) {
     const appointments = await getScheduledAppointments(username);
     return NextResponse.json(appointments);
   } catch (error) {
-    console.error('Error fetching scheduled appointments:', error);
+    //console.error('Error fetching scheduled appointments:', error);
     return NextResponse.json(
       { error: 'Failed to fetch scheduled appointments' },
       { status: 500 }

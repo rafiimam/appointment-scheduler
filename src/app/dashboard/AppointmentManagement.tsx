@@ -96,7 +96,7 @@ export default function AppointmentManagement({ currentUser }: AppointmentManage
       setAppointments(data);
       setScheduledAppointments(scheduledData);
     } catch (error) {
-      console.error('Error fetching appointments:', error);
+      //console.error('Error fetching appointments:', error);
     }
   }, []);
 
@@ -118,7 +118,7 @@ export default function AppointmentManagement({ currentUser }: AppointmentManage
         throw new Error('Failed to cancel appointment');
       }
     } catch (error) {
-      console.error('Error canceling appointment:', error);
+      //console.error('Error canceling appointment:', error);
       setPopupMessage('Failed to cancel appointment');
       setPopupOpen(true);
     }
@@ -168,7 +168,7 @@ export default function AppointmentManagement({ currentUser }: AppointmentManage
         throw new Error(`Failed to ${action} appointment`);
       }
     } catch (error) {
-      console.error(`Error ${action}ing appointment:`, error);
+      //console.error(`Error ${action}ing appointment:`, error);
       setPopupMessage(`Failed to ${action} appointment`);
       setPopupOpen(true);
     }

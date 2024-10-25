@@ -16,7 +16,7 @@ export async function GET(request: Request) {
     const appointments = await getAppointmentsByUser(username);
     return NextResponse.json(appointments);
   } catch (error) {
-    console.error('Error fetching appointments:', error);
+    //console.error('Error fetching appointments:', error);
     return NextResponse.json(
       { error: 'Failed to fetch appointments' },
       { status: 500 }
@@ -30,7 +30,7 @@ export async function POST(request: Request) {
     const result = await createAppointment(appointmentData);
     return NextResponse.json({ id: result }, { status: 201 });
   } catch (error) {
-    console.error('Error creating appointment:', error);
+    //console.error('Error creating appointment:', error);
     return NextResponse.json(
       { error: 'Failed to create appointment' },
       { status: 500 }

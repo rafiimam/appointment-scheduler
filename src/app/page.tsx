@@ -10,19 +10,22 @@ export default function Home() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);  
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+    setIsLoading(true);  
     try {
       await loginUser(username, password);
       router.push('/dashboard');
     } catch (error) {
       setError('Invalid credentials. Please try again.');
+    } finally {
+      setIsLoading(false);  
     }
   };
-
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -45,8 +48,12 @@ export default function Home() {
             className={styles.input}
           />
           {error && <p className={styles.error}>{error}</p>}
-          <button type="submit" className={styles.button}>
-            Log In
+          <button type="submit" className={styles.button} disabled={isLoading}>
+            {isLoading ? (
+              <div className={styles.loader}>Loading...</div>
+            ) : (
+              'Log In'
+            )}
           </button>
         </form>
         <Link href="/register" className={styles.registerLink}>

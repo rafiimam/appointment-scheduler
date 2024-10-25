@@ -41,7 +41,7 @@ export default function ScheduleAppointment({
   const [popupOpen, setPopupOpen] = useState(false);
   const [popupMessage, setPopupMessage] = useState('');
 
-  console.log('Selected User:', selectedSearchUser);
+  //console.log('Selected User:', selectedSearchUser);
   // Fetch all users when component mounts
   useEffect(() => {
     fetchAllUsers();
@@ -66,7 +66,7 @@ export default function ScheduleAppointment({
           setCurrentUser(user);
         }
       } catch (error) {
-        console.error('Error fetching current user:', error);
+        //console.error('Error fetching current user:', error);
       }
     };
   
@@ -88,11 +88,11 @@ export default function ScheduleAppointment({
         throw new Error('Failed to fetch users');
       }
       const data = await response.json();
-      console.log('ScheduleAppointment - Fetched Users:', data);
+      //console.log('ScheduleAppointment - Fetched Users:', data);
       setAllUsers(data);
       setSuggestions(data); // Initialize suggestions with all users
     } catch (error) {
-      console.error('Error fetching users:', error);
+      //console.error('Error fetching users:', error);
     }
   };
 
@@ -164,12 +164,12 @@ export default function ScheduleAppointment({
         setSelectedSearchUser(null);
       } else {
         const error = await response.json();
-        console.error('Appointment creation failed:', error);
+        //console.error('Appointment creation failed:', error);
         setPopupMessage(error.message || 'Failed to schedule appointment');
         setPopupOpen(true);
       }
     } catch (error) {
-      console.error('Error scheduling appointment:', error);
+      //console.error('Error scheduling appointment:', error);
       setPopupMessage('An error occurred while scheduling the appointment');
       setPopupOpen(true);
     }

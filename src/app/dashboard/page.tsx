@@ -44,22 +44,26 @@ export default function Dashboard() {
   };
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('currentUser');
-    if (storedUser) {
-      try {
-        const parsedUser = JSON.parse(storedUser);
-        console.log('Parsed User:', parsedUser);
-
-        if (!parsedUser.username) {
-          console.error('Username is missing from stored user data');
+    const getStoredUser = () => {
+      const storedUser = localStorage.getItem('currentUser');
+      if (storedUser) {
+        try {
+          const parsedUser = JSON.parse(storedUser);
+          if (!parsedUser.username) {
+            //console.error('Username is missing from stored user data');
+            return;
+          }
+          setCurrentUser(parsedUser);
+        } catch (error) {
+          //console.error('Error parsing user data:', error);
         }
-
-        setCurrentUser(parsedUser);
-      } catch (error) {
-        console.error('Error parsing user data:', error);
+      } else {
+        //console.log('No user data found in localStorage');
       }
-    } else {
-      console.log('No user data found in localStorage');
+    };
+  
+    if (typeof window !== 'undefined') {
+      getStoredUser();
     }
   }, []);
 
@@ -84,7 +88,7 @@ export default function Dashboard() {
         throw new Error('Failed to schedule appointment');
       }
     } catch (error) {
-      console.error('Error scheduling appointment:', error);
+      //console.error('Error scheduling appointment:', error);
       alert('Failed to schedule appointment');
     }
   };

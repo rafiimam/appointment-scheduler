@@ -36,7 +36,7 @@ export default function VoiceRecorder({ onRecordingComplete }: VoiceRecorderProp
       mediaRecorder.start();
       setIsRecording(true);
     } catch (error) {
-      console.error('Error accessing microphone:', error);
+      //console.error('Error accessing microphone:', error);
       alert('Unable to access microphone');
     }
   };
