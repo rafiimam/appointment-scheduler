@@ -21,7 +21,7 @@ A full-stack web application built with Next.js and MongoDB that allows users to
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/appointment-scheduler.git
+git clone https://github.com/rafiimam/appointment-scheduler.git
 cd appointment-scheduler
 ```
 2. Install dependencies:
