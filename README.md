@@ -14,7 +14,6 @@ A full-stack web application built with Next.js and MongoDB that allows users to
 ## Prerequisites
 
 - Node.js (v14 or higher)
-- MongoDB
 - npm or yarn
 
 ## Installation
