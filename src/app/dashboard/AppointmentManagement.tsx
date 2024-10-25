@@ -130,7 +130,7 @@ export default function AppointmentManagement({ currentUser }: AppointmentManage
   };
 
   useEffect(() => {
-    if (currentUser && currentUser.username) {  // Add check for username
+    if (currentUser && currentUser.username) {  
       fetchAppointments({ username: currentUser.username });
     }
   }, [fetchAppointments, currentUser]);
@@ -147,11 +147,9 @@ export default function AppointmentManagement({ currentUser }: AppointmentManage
   
       if (response.ok) {
         if (action === 'decline') {
-          // Remove the appointment from both arrays
           setAppointments(prev => prev.filter(app => app._id !== appointmentId));
           setScheduledAppointments(prev => prev.filter(app => app._id !== appointmentId));
         } else if (action === 'accept') {
-          // Update the status in both arrays
           const updateAppointment = (prev: Appointment[]) =>
             prev.map(app =>
               app._id === appointmentId
@@ -180,7 +178,6 @@ export default function AppointmentManagement({ currentUser }: AppointmentManage
 
   return (
     <Container style={{ textAlign: 'center' }}>
-      {/* Your Appointments Section */}
       <Typography variant="h4" gutterBottom>
         Your Appointments
       </Typography>
@@ -260,7 +257,6 @@ export default function AppointmentManagement({ currentUser }: AppointmentManage
           ))}
       </Grid>
 
-      {/* Appointments You Scheduled Section */}
       <Typography variant="h4" gutterBottom sx={{ mt: 6 }}>
         Appointments You Scheduled
       </Typography>

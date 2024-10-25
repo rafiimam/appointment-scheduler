@@ -1,4 +1,3 @@
-// src/app/dashboard/AppointmentModal.tsx
 'use client';
 
 import { useState, useRef } from 'react';
@@ -14,7 +13,7 @@ interface AppointmentModalProps {
   isOpen: boolean;
   onClose: () => void;
   onSchedule: (appointmentData: any) => void;
-  selectedUser: User | null;  // Changed from User | undefined
+  selectedUser: User | null;  
 }
 
 export default function AppointmentModal({ isOpen, onClose, onSchedule, selectedUser }: AppointmentModalProps) {

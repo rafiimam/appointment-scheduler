@@ -114,8 +114,7 @@ export default function Dashboard() {
       >
         <MenuIcon sx={{ color: '#4834d4' }} />
       </IconButton>
-
-      {/* Mobile Drawer */}
+        
       <Drawer
         anchor="left"
         open={isMobileMenuOpen}
