@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Appointment Scheduler
 
-## Getting Started
+A full-stack web application built with Next.js and MongoDB that allows users to schedule, manage, and track appointments with other users.
 
-First, run the development server:
+## Features
 
+- User authentication (Register/Login)
+- Real-time appointment management
+- Voice note attachments
+- Search functionality
+- Appointment status tracking (pending, approved, declined)
+- Responsive design
+
+## Prerequisites
+
+- Node.js (v14 or higher)
+- MongoDB
+- npm or yarn
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/appointment-scheduler.git
+cd appointment-scheduler
+```
+2. Install dependencies:
+```bash
+npm install
+```
+3. Start the development server:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage Guide
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. User Registration and Login
+- Navigate to the registration page
+- Create an account with username and password
+- Log in using your credentials
 
-## Learn More
+### 2. Dashboard Overview
+After logging in, you'll see two main sections:
+- **Your Appointments**: Appointments others have scheduled with you
+- **Appointments You Scheduled**: Appointments you've created
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Scheduling an Appointment
+1. Open the sidebar by clicking the menu icon
+2. Search for a user you want to schedule with
+3. Click on the user to open the scheduling modal
+4. Fill in required fields:
+   - Title
+   - Description
+   - Date
+   - Time
+5. Optionally record a voice note
+6. Click "Schedule" to create the appointment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 4. Managing Appointments
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#### For Received Appointments:
+- **Accept**: Approve pending appointments
+- **Decline**: Reject appointments
+- View appointment details including voice notes
 
-## Deploy on Vercel
+#### For Scheduled Appointments:
+- **Cancel**: Cancel appointments before they expire
+- Track status (pending, approved, declined)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 5. Search and Filter
+- Use the search bar to find appointments by title or description
+- Toggle between "Upcoming" and "Expired" appointments
+- View all appointments in a organized grid layout
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Technical Stack
+
+- **Frontend**: Next.js, Material-UI, TypeScript
+- **Backend**: Next.js API Routes
+- **Database**: MongoDB
+- **Authentication**: Custom implementation
+- **State Management**: React Hooks
+- **Styling**: CSS Modules
+
+## API Endpoints
+
+- `POST /api/auth/register`: User registration
+- `POST /api/auth/login`: User authentication
+- `GET /api/appointments`: Fetch user's appointments
+- `POST /api/appointments`: Create new appointment
+- `PATCH /api/appointments/:id`: Update appointment status
+- `GET /api/appointments/scheduled`: Fetch scheduled appointments
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
