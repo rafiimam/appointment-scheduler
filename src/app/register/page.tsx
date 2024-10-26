@@ -73,6 +73,9 @@ export default function Register() {
           <button type="submit" className={styles.button}>
             Register
           </button>
+          <Link href="/" className={styles.registerLink}>
+            Back to Login
+          </Link>
         </form>
       </main>
     </div>
